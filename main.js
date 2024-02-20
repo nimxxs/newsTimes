@@ -3,7 +3,7 @@ let news = []
 
 const getLatesNews = async () => {
     const url = new URL (
-        `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
+        `https://mynewtimes.netlify.app//top-headlines?country=kr&apiKey=${API_KEY}`
     )
     const response = await fetch(url)
     const data = await response.json()
