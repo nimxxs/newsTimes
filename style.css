@@ -88,7 +88,7 @@
     color: white;
     font-weight: bold;
 }
-@media (max-width: 450px) {
+@media (max-width: 570px) {
     /* 모바일 일 때 기존 메뉴 숨기고 햄버거바 나타내기 */
     .menus {
         display: none;
