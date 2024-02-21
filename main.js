@@ -17,23 +17,23 @@ const getLatesNews = async () => {
 }
 
 // 이미지 유효성 검사
-const imageError = (imageUrl) => {
-    // 새로운 'Image' 객체를 생성 -> js에서 이미지를 다룰 때 사용되는 내장 객체, 이미지를 동적 생성함.
-    const image = new Image();
-    image.src = imageUrl
-    if(!image.complete) {
-        return false
-    } else {
-        return true
-    }
-}
+// const imageError = (imageUrl) => {
+//     // 새로운 'Image' 객체를 생성 -> js에서 이미지를 다룰 때 사용되는 내장 객체, 이미지를 동적 생성함.
+//     const image = new Image();
+//     image.src = imageUrl
+//     if(!image.complete) {
+//         return false
+//     } else {
+//         return true
+//     }
+// }
 
 const render = () => {
     const newsHTML = newsList.map(
         (news) => 
         `<div class="row news">
             <div class="col-lg-4">
-                <img class="newsImgSize" src="${news.urlToImage && imageError(news.urlToImage) ? news.urlToImage : 'https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg'}">
+                <img class="newsImgSize" src="${news.urlToImage ? news.urlToImage : 'https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg'}">
             </div>
             <div class="col-lg-8">
                 <h2>${news.title}</h2>
