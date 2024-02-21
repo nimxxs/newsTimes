@@ -9,8 +9,8 @@ menus.forEach(menu => menu.addEventListener("click", (event) => getNewsByCategor
 // api 가져오기
 const getLatesNews = async () => {
     const url = new URL (
-        // `https://mynewtimes.netlify.app//top-headlines?country=kr&apiKey=${API_KEY}`
-        `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
+        `https://mynewtimes.netlify.app//top-headlines?country=kr&apiKey=${API_KEY}`
+        // `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
     )
     getNews(url);
     console.log("ddd", newsList);
