@@ -10,8 +10,8 @@ let url = new URL(`https://mynewtimes.netlify.app//top-headlines?country=kr&apiK
 // api 가져오기
 const getLatesNews = async () => {
     url = new URL (
-        // `https://mynewtimes.netlify.app//top-headlines?country=kr&apiKey=${API_KEY}`
-        `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
+        `https://mynewtimes.netlify.app//top-headlines?country=kr&apiKey=${API_KEY}`
+        // `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
     )
     getNews();
 }
