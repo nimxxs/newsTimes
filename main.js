@@ -10,18 +10,30 @@ let url = new URL(`https://mynewtimes.netlify.app//top-headlines?country=kr&apiK
 // api 가져오기
 const getLatesNews = async () => {
     url = new URL (
-        `https://mynewtimes.netlify.app//top-headlines?country=kr&apiKey=${API_KEY}`
-        // `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
+        // `https://mynewtimes.netlify.app//top-headlines?country=kr&apiKey=${API_KEY}`
+        `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
     )
     getNews();
 }
 
 // 기사 가져오는 함수
 const getNews = async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    newsList = data.articles;
-    render();
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        if (response.status === 200) {
+            if (data.articles.length === 0) {
+                throw new Error("No result for this search");
+            }
+            newsList = data.articles;
+            render();
+        } else {
+            throw new Error(data.message);
+        }
+        
+    } catch(error) {
+        errorRender(error.message);
+    }
 }
 
 // 카테고리별 기사 가져오기
@@ -71,6 +83,15 @@ const render = () => {
     document.getElementById("newsBoard").innerHTML = newsHTML;
 }
 getLatesNews()
+
+// 에러 메시지
+const errorRender = (errorMessage)  => {
+    const errorHTML = `<div class="alert alert-secondary" role="alert">
+        ${errorMessage}
+    </div>`;
+
+    document.getElementById("newsBoard").innerHTML = errorHTML;
+}
 
 // 검색창
 searchButton.addEventListener("click", () => {
