@@ -5,7 +5,10 @@ let input = document.getElementById("input");
 let parent = document.querySelector("parent");
 const menus = document.querySelectorAll(".menus button");
 menus.forEach(menu => menu.addEventListener("click", (event) => getNewsByCategory(event)))
-let url = new URL(`https://mynewtimes.netlify.app//top-headlines?country=kr&apiKey=${API_KEY}`)
+let url = new URL(
+    `https://mynewtimes.netlify.app//top-headlines?country=kr&apiKey=${API_KEY}`
+    // `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
+    )
 
 // api 가져오기
 const getLatesNews = async () => {
@@ -39,7 +42,10 @@ const getNews = async () => {
 // 카테고리별 기사 가져오기
 const getNewsByCategory = async (event) => {
     const category = event.target.textContent.toLowerCase();
-    url = new URL(`https://newsapi.org/v2/top-headlines?country=kr&category=${category}&apiKey=${API_KEY}`);
+    url = new URL(
+        `https://mynewtimes.netlify.app//top-headlines?country=kr&category=${category}&apiKey=${API_KEY}`
+        // `https://newsapi.org/v2/top-headlines?country=kr&category=${category}&apiKey=${API_KEY}`
+    );
     getNews();
 }
 
@@ -47,7 +53,10 @@ const getNewsByCategory = async (event) => {
 const getNewsByKeyword = async () => {
     const keyword = document.getElementById("input").value;
     console.log("keyword", keyword);
-    url = new URL(`https://newsapi.org/v2/top-headlines?country=kr&q=${keyword}&apiKey=${API_KEY}`);
+    url = new URL(
+        `https://mynewtimes.netlify.app//top-headlines?q=${keyword}&apiKey=${API_KEY}`
+        // `https://newsapi.org/v2/top-headlines?country=kr&q=${keyword}&apiKey=${API_KEY}`
+        );
     getNews();
 }
 
