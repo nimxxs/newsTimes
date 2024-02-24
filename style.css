@@ -88,6 +88,53 @@
     color: white;
     font-weight: bold;
 }
+
+/* 페이지네이션 */
+.pagination{
+    justify-content: center;
+    text-align: center;
+}
+.pagination2 {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+.pagination li {
+    list-style-type: none;
+}
+.pagination li a.page-link{
+    color: #818181;
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 35px;
+    height: 35px;
+    width: 40px;
+    padding: 0;
+    margin: 0 7px;
+    border: none;
+    border-radius: 0;
+    border-bottom: 4px double #000;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+}
+.pagination li a.page-link:hover,
+.pagination li a.page-link:focus,
+.pagination li.active a.page-link:hover,
+.pagination li.active a.page-link{
+    color: #fff;
+    background: #000;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.pagination li:first-child a.page-link,
+.pagination li:last-child a.page-link{
+    border-radius: 0;
+}
+
 @media (max-width: 570px) {
     /* 모바일 일 때 기존 메뉴 숨기고 햄버거바 나타내기 */
     .menus {
@@ -98,6 +145,14 @@
         margin-top: 20px;
     }
     .section1 {
+        display: flex;
+    }
+    .page-item {
+        display: none;
+    }
+    .active,
+    .preToPage,
+    .nextToPage {
         display: flex;
     }
 }
