@@ -6,8 +6,8 @@ let parent = document.querySelector("parent");
 const menus = document.querySelectorAll(".menus button");
 menus.forEach(menu => menu.addEventListener("click", (event) => getNewsByCategory(event)))
 let url = new URL(
-    // `https://mynewtimes.netlify.app//top-headlines?country=kr&apiKey=${API_KEY}`
-    `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
+    `https://mynewtimes.netlify.app//top-headlines?country=kr&apiKey=${API_KEY}`
+    // `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
     )
 let totalResults = 0;
 let page = 1;
@@ -17,8 +17,8 @@ const groupSize = 5;
 // api 가져오기
 const getLatesNews = async () => {
     url = new URL (
-        // `https://mynewtimes.netlify.app//top-headlines?country=kr&apiKey=${API_KEY}`
-        `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
+        `https://mynewtimes.netlify.app//top-headlines?country=kr&apiKey=${API_KEY}`
+        // `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
         )
         getNews();
     }
@@ -54,8 +54,8 @@ const getNews = async () => {
 const getNewsByCategory = async (event) => {
     const category = event.target.textContent.toLowerCase();
     url = new URL(
-        // `https://mynewtimes.netlify.app//top-headlines?country=kr&category=${category}&apiKey=${API_KEY}`
-        `https://newsapi.org/v2/top-headlines?country=kr&category=${category}&apiKey=${API_KEY}`
+        `https://mynewtimes.netlify.app//top-headlines?country=kr&category=${category}&apiKey=${API_KEY}`
+        // `https://newsapi.org/v2/top-headlines?country=kr&category=${category}&apiKey=${API_KEY}`
     );
     getNews();
 }
@@ -65,8 +65,8 @@ const getNewsByKeyword = async () => {
     const keyword = document.getElementById("input").value;
     console.log("keyword", keyword);
     url = new URL(
-        // `https://mynewtimes.netlify.app//top-headlines?q=${keyword}&apiKey=${API_KEY}`
-        `https://newsapi.org/v2/top-headlines?country=kr&q=${keyword}&apiKey=${API_KEY}`
+        `https://mynewtimes.netlify.app//top-headlines?q=${keyword}&apiKey=${API_KEY}`
+        // `https://newsapi.org/v2/top-headlines?country=kr&q=${keyword}&apiKey=${API_KEY}`
         );
     getNews();
 }
