@@ -95,5 +95,9 @@
     }
     .openNav {
         display: block;
+        margin-top: 20px;
+    }
+    .section1 {
+        display: flex;
     }
 }
