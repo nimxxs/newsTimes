@@ -27,3 +27,6 @@ NewsAPI를 이용하여 뉴스기사 보기.
 1. 유저는 카테고리별로 기사를 볼 수 있다.
 2. 기사를 검색할 수 있다.
 3. 모바일로도 볼 수 있다.
+
+## 🌍Netlify
+https://mynewtimes.netlify.app/
