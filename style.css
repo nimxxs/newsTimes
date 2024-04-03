@@ -134,6 +134,12 @@
 .pagination li:last-child a.page-link{
     border-radius: 0;
 }
+/* 이미지 크기 */
+.newsImgSize {
+    width: 365px;
+    height: 237px;
+    margin-left: 30px;
+}
 
 @media (max-width: 570px) {
     /* 모바일 일 때 기존 메뉴 숨기고 햄버거바 나타내기 */
